@@ -21,5 +21,11 @@ class Showpost extends MY_Controller
     }
     public function get_all_post()
     {
+        // echo"hello michky";
+        $this->load->model("Showpost_model");
+        $result = $this->Showpost_model->get_posts();
+        $json_data =json_encode($result);
+        echo "$json_data";
+        return  $json_data; 
     }
 }
